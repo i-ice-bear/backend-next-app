@@ -1,5 +1,4 @@
 import React from "react";
-import NavbarComponent from "./Router/Navbar";
 
 const IndexComponent = () => {
   return (

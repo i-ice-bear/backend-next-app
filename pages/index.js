@@ -1,39 +1,34 @@
 import React from "react";
+import axios from "axios";
+import { Card } from "@nextui-org/react";
 
 const IndexComponent = () => {
+  const [ImageFetch, setImage] = React.useState([]);
+
+  const fetch__image_splash = async () => {
+    const fetch_result = await axios.get(
+      "https://api.unsplash.com/photos/?client_id=b4CuH4vAeA99oEm0tAW7SyxH6rcjpUVB1lp06kLnmqo"
+    );
+    setImage(fetch_result.data);
+    console.log(fetch_result);
+  };
+  React.useEffect(() => {
+    fetch__image_splash();
+  }, []);
   return (
     <>
-    <div className="container my-5">
-      <div class="container">
-        <form>
-          <fieldset class="mb-3 row">
-            <legend class="col-form-legend col-4">Lexend Giga</legend>
-            <div class="col-8">
-              Login now
-            </div>
-          </fieldset>
-          <div class="mb-3 row">
-            <label for="inputName" class="col-4 col-form-label">Name</label>
-            <div class="col-8 my-3">
-              <input type="text" class="form-control" name="inputName" id="inputName" placeholder="Enter your name" />
-            </div>
-            <label for="inputName" class="col-4 col-form-label">Email</label>
-            <div class="col-8">
-              <input type="email" class="form-control my-3" name="inputName" id="inputName" placeholder="Enter your email" />
-            </div>
-            <label for="inputName" class="col-4 col-form-label">Password</label>
-            <div class="col-8">
-              <input type="password" class="form-control my-3" name="inputName" id="inputName" placeholder="Enter your password" />
-            </div>
+    <div className="row container m-auto">
+
+      {ImageFetch.map((imageItem) => {
+        return (
+          <div className="container col-4">
+            <Card className="my-3">
+              <img src={imageItem.urls.small} />
+            </Card>
           </div>
-          <div class="mb-3 row">
-            <div class="offset-sm-4 col-sm-8">
-              <button type="submit" class="btn btn-primary">Submit now</button>
-            </div>
-          </div>
-        </form>
+        );
+      })}
       </div>
-    </div>
     </>
   );
 };

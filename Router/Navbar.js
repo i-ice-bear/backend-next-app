@@ -20,6 +20,7 @@ export default function App() {
   const navigationThrough = [
     { name: "Home", href: "/" },
     { name: "News app", href: "./NewsApp" },
+    { name: "Login", href: "./Login" },
   ];
 
   return (

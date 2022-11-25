@@ -15,6 +15,7 @@ const IndexComponent = () => {
   React.useEffect(() => {
     fetch__image_splash();
   }, []);
+  
   return (
     <>
       <div className="row container m-auto">

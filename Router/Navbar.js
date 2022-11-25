@@ -94,7 +94,11 @@ export default function App() {
               <Dropdown.Item key="settings" withDivider>
                 My Settings
               </Dropdown.Item>
-              <Dropdown.Item key="team_settings">Team Settings</Dropdown.Item>
+              <Dropdown.Item key="team_settings">
+                <Link href="./TeamSettings" className="text-decoration-none">
+                  Team Settings
+                </Link>
+              </Dropdown.Item>
               <Dropdown.Item key="analytics" withDivider>
                 Analytics
               </Dropdown.Item>

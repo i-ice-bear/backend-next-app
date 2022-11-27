@@ -8,7 +8,7 @@ const NewsAppComponent = (props) => {
 
   const __fetch__news = async () => {
     const axios__get = await axios.get(
-      "https://newsapi.org/v2/everything?q=tesla&from=2022-10-23&sortBy=publishedAt&apiKey=391b845c95b64b0ea4a5c67fe7d31a41"
+      "https://newsapi.org/v2/everything?q=tesla&from=2022-10-27&sortBy=publishedAt&apiKey=391b845c95b64b0ea4a5c67fe7d31a41"
     );
     setFetchNews(axios__get.data.articles);
   };

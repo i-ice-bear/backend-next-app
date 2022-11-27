@@ -11,14 +11,13 @@ export default function CardBarChart() {
       options: {
         onClick: (e) => {
           const canvasPosition = getRelativePosition(e, chart);
-    
-          // Substitute the appropriate scale IDs
           const dataX = chart.scales.x.getValueForPixel(canvasPosition.x);
           const dataY = chart.scales.y.getValueForPixel(canvasPosition.y);
         }
       }
     });
   }, []);
+
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
@@ -35,7 +34,6 @@ export default function CardBarChart() {
           </div>
         </div>
         <div className="p-4 flex-auto">
-          {/* Chart */}
           <div className="relative h-350-px">
             <canvas id="bar-chart"></canvas>
           </div>
